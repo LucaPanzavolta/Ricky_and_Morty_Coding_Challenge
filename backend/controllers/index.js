@@ -10,6 +10,7 @@ const {
 const {
   removeCharacterFromFavourites,
 } = require("./removeCharacterFromFavourites.controller");
+const { getAuthenticatedUser } = require("./getAuthenticatedUser.controller");
 
 module.exports = {
   getAllCharacters,
@@ -18,4 +19,5 @@ module.exports = {
   getFavouriteCharacters,
   addCharacterToFavourites,
   removeCharacterFromFavourites,
+  getAuthenticatedUser,
 };

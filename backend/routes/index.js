@@ -6,6 +6,7 @@ const {
   getFavouriteCharacters,
   addCharacterToFavourites,
   removeCharacterFromFavourites,
+  getAuthenticatedUser,
 } = require("../controllers");
 const { authenticate } = require("../middlewares/authenticate.middleware");
 
@@ -27,5 +28,7 @@ router.delete(
   authenticate,
   removeCharacterFromFavourites
 );
+
+router.get("/authStatus", authenticate, getAuthenticatedUser);
 
 module.exports = router;
