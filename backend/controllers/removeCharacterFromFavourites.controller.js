@@ -1,18 +1,18 @@
 const User = require("../models/user.model");
 const { logError } = require("../helpers/logError");
 
-const addCharacterToFavourites = async (req, res) => {
+const removeCharacterFromFavourites = async (req, res) => {
   try {
     const { characterId } = req.params;
     const { user } = req;
 
     const updatedUserRecord = await User.findByIdAndUpdate(
       user._id, // eslint-disable-line
-      { $addToSet: { favouriteCharacters: characterId } },
+      { $pullAll: { favouriteCharacters: [characterId] } },
       { new: true, omitUndefined: true }
     );
 
-    res.status(201).send({
+    res.status(200).send({
       success: true,
       message: "Favourite characters list updated correctly.",
       favourites: updatedUserRecord.favouriteCharacters,
@@ -24,5 +24,5 @@ const addCharacterToFavourites = async (req, res) => {
 };
 
 module.exports = {
-  addCharacterToFavourites,
+  removeCharacterFromFavourites,
 };

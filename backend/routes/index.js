@@ -5,6 +5,7 @@ const {
   signIn,
   getFavouriteCharacters,
   addCharacterToFavourites,
+  removeCharacterFromFavourites,
 } = require("../controllers");
 const { authenticate } = require("../middlewares/authenticate.middleware");
 
@@ -20,6 +21,11 @@ router.post(
   "/favouriteCharacter/:characterId",
   authenticate,
   addCharacterToFavourites
+);
+router.delete(
+  "/favouriteCharacter/:characterId",
+  authenticate,
+  removeCharacterFromFavourites
 );
 
 module.exports = router;

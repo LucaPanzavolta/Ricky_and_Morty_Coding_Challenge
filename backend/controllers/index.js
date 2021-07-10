@@ -7,6 +7,9 @@ const {
 const {
   addCharacterToFavourites,
 } = require("./addCharacterToFavourites.controller");
+const {
+  removeCharacterFromFavourites,
+} = require("./removeCharacterFromFavourites.controller");
 
 module.exports = {
   getAllCharacters,
@@ -14,4 +17,5 @@ module.exports = {
   signIn,
   getFavouriteCharacters,
   addCharacterToFavourites,
+  removeCharacterFromFavourites,
 };
