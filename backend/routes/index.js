@@ -1,7 +1,9 @@
 const { Router } = require("express");
-const { getAllCharacters } = require("../controllers");
+const { getAllCharacters, signUp } = require("../controllers");
 
 const router = Router();
+
+router.post("/signUp", signUp);
 
 router.get("/characters", getAllCharacters);
 
