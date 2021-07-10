@@ -4,6 +4,7 @@ const {
   signUp,
   signIn,
   getFavouriteCharacters,
+  addCharacterToFavourites,
 } = require("../controllers");
 const { authenticate } = require("../middlewares/authenticate.middleware");
 
@@ -15,5 +16,10 @@ router.post("/signIn", signIn);
 router.get("/characters", authenticate, getAllCharacters);
 
 router.get("/favouriteCharacters", authenticate, getFavouriteCharacters);
+router.post(
+  "/favouriteCharacter/:characterId",
+  authenticate,
+  addCharacterToFavourites
+);
 
 module.exports = router;
