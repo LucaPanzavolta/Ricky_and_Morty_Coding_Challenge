@@ -4,7 +4,9 @@
   "description": "Backend code for the \"Ricky&Morty\" app developed for HAUFE's coding challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server:setup": "npm install",
+    "server:run": "node index.js",
+    "start": "npm run server:setup && npm run server:run"
   },
   "author": "Luca Panzavolta",
   "license": "ISC",
