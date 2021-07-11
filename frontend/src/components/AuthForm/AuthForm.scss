@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #161a1d;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 3em;
+
+  &__cta-text {
+    color: white;
+    margin-top: 0;
+  }
+
+  input,
+  button {
+    font-size: 1rem;
+    border-radius: 10px;
+    outline: none;
+    padding: 1em;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    margin-bottom: 1em;
+    border: 1px solid #afb9c8;
+
+    &:focus {
+      // TODO 
+    }
+  }
+
+  &__submit-button {
+    color: white;
+    font-weight: bold;
+    background-color: $form-button-bg;
+    border: none;
+    cursor: pointer;
+  }
+}
