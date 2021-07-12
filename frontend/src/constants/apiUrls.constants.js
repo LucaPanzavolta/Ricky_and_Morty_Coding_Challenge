@@ -9,6 +9,7 @@ const apiUrls = {
   // AUTH URLS
   get signUp() { return `${this.baseUrl}/signup`; },
   get signIn() { return `${this.baseUrl}/signin`; },
+  get verifyToken() { return `${this.baseUrl}/authStatus`; },
 
   // CHARACTERS URLS
   get getAllCharacters() {

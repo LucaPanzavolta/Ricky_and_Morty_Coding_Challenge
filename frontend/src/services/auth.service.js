@@ -1,9 +1,10 @@
 import axios from 'axios';
 import ApiUrls from '../constants/apiUrls.constants';
+import AuthenticatedClient from './AuthenticatedClient';
 
-const storeJwtTokenInLocalStorage = (data) => {
-  localStorage.setItem('token', data.token);
-  return data;
+const storeJwtTokenInLocalStorage = (response) => {
+  localStorage.setItem('token', response.data.token);
+  return response;
 };
 
 const AuthService = {
@@ -21,6 +22,12 @@ const AuthService = {
       data: formData,
     })
       .then(storeJwtTokenInLocalStorage);
+  },
+  verifyAuthStatus() {
+    return AuthenticatedClient({
+      method: 'get',
+      url: ApiUrls.verifyToken,
+    });
   },
 };
 
