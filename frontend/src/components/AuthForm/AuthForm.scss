@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
 
 .auth-form {
   display: flex;
@@ -40,5 +40,11 @@
     background-color: $form-button-bg;
     border: none;
     cursor: pointer;
+  }
+
+  &__error-text {
+    font-size: 0.8rem;
+    color: $form-error-text;
+    margin-bottom: 0;
   }
 }
