@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
-import { signUpThunk } from '../../redux/thunks/auth.thunk';
+import signUpThunk from '../../redux/thunks/signup.thunk';
 
 function SignUp() {
   const dispatch = useDispatch();

@@ -1,8 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 import AuthService from '../../services/auth.service';
 
-// eslint-disable-next-line
-export const signUpThunk = (formData) => (dispatch) => {
+const signUpThunk = (formData) => (dispatch) => {
   dispatch({ type: actionTypes.SIGN_UP_REQUEST });
 
   return AuthService.signUp(formData)
@@ -17,3 +16,5 @@ export const signUpThunk = (formData) => (dispatch) => {
       throw new Error(error);
     });
 };
+
+export default signUpThunk;
