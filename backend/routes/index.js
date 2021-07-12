@@ -15,7 +15,11 @@ const router = Router();
 router.post("/signUp", signUp);
 router.post("/signIn", signIn);
 
-router.get("/characters", authenticate, getAllCharacters);
+router.get(
+  "/characters",
+  //  authenticate,
+  getAllCharacters
+);
 
 router.get("/favouriteCharacters", authenticate, getFavouriteCharacters);
 router.post(

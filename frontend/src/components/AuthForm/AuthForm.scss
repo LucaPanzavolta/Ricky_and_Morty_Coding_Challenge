@@ -27,24 +27,20 @@
   input[type="email"],
   input[type="password"] {
     margin-bottom: 1em;
-    border: 1px solid #afb9c8;
-
-    &:focus {
-      // TODO 
-    }
+    border: 1px solid $grey;
   }
 
   &__submit-button {
     color: white;
     font-weight: bold;
-    background-color: $form-button-bg;
+    background-color: $green;
     border: none;
     cursor: pointer;
   }
 
   &__error-text {
     font-size: 0.8rem;
-    color: $form-error-text;
+    color: $red;
     margin-bottom: 0;
   }
 }

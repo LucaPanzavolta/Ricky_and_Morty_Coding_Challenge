@@ -1,15 +1,5 @@
 import axios from 'axios';
-
-const {
-  REACT_APP_BACKEND_SERVER_HOST: backendHost,
-  REACT_APP_BACKEND_SERVER_PORT: backendPort,
-} = process.env;
-
-const apiUrls = {
-  baseUrl: `http://${backendHost}:${backendPort}`,
-  get signUp() { return `${this.baseUrl}/signup`; },
-  get signIn() { return `${this.baseUrl}/signin`; },
-};
+import ApiUrls from '../constants/apiUrls.constants';
 
 const storeJwtTokenInLocalStorage = (data) => {
   localStorage.setItem('token', data.token);
@@ -20,14 +10,14 @@ const AuthService = {
   signUp(formData) {
     return axios({
       method: 'post',
-      url: apiUrls.signUp,
+      url: ApiUrls.signUp,
       data: formData,
     });
   },
   signIn(formData) {
     return axios({
       method: 'post',
-      url: apiUrls.signIn,
+      url: ApiUrls.signIn,
       data: formData,
     })
       .then(storeJwtTokenInLocalStorage);
