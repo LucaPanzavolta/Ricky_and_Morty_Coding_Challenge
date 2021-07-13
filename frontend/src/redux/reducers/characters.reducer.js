@@ -41,6 +41,33 @@ const charactersReducer = (state = INITIAL_STATE, action) => {
           error: action.payload,
         },
       };
+
+    case actionTypes.UPDATE_FAVOURITE_CHARACTERS_REQUEST:
+      return {
+        ...state,
+        favourites: {
+          ...state.favourites,
+          isLoading: true,
+        },
+      };
+    case actionTypes.UPDATE_FAVOURITE_CHARACTERS_SUCCESS:
+      return {
+        ...state,
+        favourites: {
+          isLoading: false,
+          data: action.payload,
+          error: null,
+        },
+      };
+    case actionTypes.UPDATE_FAVOURITE_CHARACTERS_ERROR:
+      return {
+        ...state,
+        favourites: {
+          isLoading: false,
+          data: [],
+          error: action.payload,
+        },
+      };
     default: return state;
   }
 };
