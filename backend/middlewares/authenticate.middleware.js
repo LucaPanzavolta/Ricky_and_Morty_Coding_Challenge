@@ -17,6 +17,7 @@ const authenticate = async (req, res, next) => { // eslint-disable-line
 
         if (!user) throw new Error("Invalid token.");
 
+        delete user._id;  // eslint-disable-line
         req.user = user;
         return next();
       }
