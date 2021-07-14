@@ -1,24 +1,24 @@
 const establishDBconnection = require("./db");
 const { logError } = require("./helpers/logError");
 
-const startServer = (app, port, environment) => {
+const startServer = (app, port) => {
   return new Promise((resolve, reject) => {
     app.listen(port, (err) => {
       if (err) {
         console.error('❌ Unable to connect to the server: ', err); // eslint-disable-line
         reject(err);
       } else {
-        console.log(`🌍 Server listening on port ${port} - ${environment} environment`); // eslint-disable-line
+        console.log(`🌍 Server listening on port ${port} - development environment`); // eslint-disable-line
         resolve();
       }
     });
   });
 };
 
-const launchDatabaseAndServer = async (app, port, environment) => {
+const launchDatabaseAndServer = async (app, port) => {
   try {
     await establishDBconnection();
-    await startServer(app, port, environment);
+    await startServer(app, port);
   } catch (err) {
     logError(err);
   }
