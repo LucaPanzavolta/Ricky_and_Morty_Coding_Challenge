@@ -70,6 +70,9 @@
 }
 
 .character-card--detail {
+  &:hover {
+    animation: none;
+  }
 
   .character-card__avatar {
     width: 50%;
@@ -78,6 +81,7 @@
 
   .character-card__data {
     font-size: 1rem;
+    padding: 2em 4em;
   }
 }
 
