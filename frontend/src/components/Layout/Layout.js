@@ -1,12 +1,13 @@
 import React from 'react';
 import Routes from '../../routes/Routes';
+import Header from './Header/Header';
 import './Layout.scss';
 
 function Layout() {
   return (
     <div>
       <div className="layout">
-        <header className="layout__header">Ricky&Morty</header>
+        <Header />
         <main className="layout__content">
           <Routes />
         </main>

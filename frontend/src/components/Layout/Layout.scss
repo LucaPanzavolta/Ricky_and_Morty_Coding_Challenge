@@ -8,6 +8,20 @@
     padding: 1em;
     color: white;
     margin-bottom: 2em;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      width: fit-content;
+      height: 2rem;
+      overflow: visible;
+
+      &__icon {
+        height: 4rem;
+        margin-right: 0.5em;
+      }
+    }
   }
 
   &__content {
