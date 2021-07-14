@@ -69,6 +69,14 @@
   }
 }
 
+.character-card--detail {
+
+  .character-card__avatar {
+    width: 50%;
+    padding-top: 50%;
+  }
+}
+
 @keyframes shake {
   10%,
   90% {

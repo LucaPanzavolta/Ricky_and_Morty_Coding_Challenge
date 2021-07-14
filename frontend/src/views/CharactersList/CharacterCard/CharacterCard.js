@@ -2,12 +2,14 @@ import React from 'react';
 import './CharacterCard.scss';
 import PropTypes from 'prop-types';
 
-function CharacterCard({
-  image, name, species, status, origin, location, onClick,
-}) {
+function CharacterCard({ character, classes = '', onClick = () => { } }) {
+  const {
+    image, name, species, status, origin, location,
+  } = character;
+
   return (
     // eslint-disable-next-line
-    <div className="character-card" onClick={onClick}>
+    <div className={`character-card ${classes}`} onClick={onClick}>
       <div className="character-card__avatar" style={{ backgroundImage: `url(${image})` }} />
       <div className="character-card__data">
         <p className="character-card__name">{name}</p>
@@ -29,17 +31,20 @@ function CharacterCard({
 }
 
 CharacterCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  species: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired,
-  origin: PropTypes.shape({
+  character: PropTypes.shape({
     name: PropTypes.string.isRequired,
-  }).isRequired,
-  location: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    species: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    origin: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    location: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
   onClick: PropTypes.func.isRequired,
+  classes: PropTypes.string.isRequired,
 };
 
 export default CharacterCard;

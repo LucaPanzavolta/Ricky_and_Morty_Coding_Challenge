@@ -17,7 +17,7 @@ function CharactersList() {
       {characters.map((character) => (
         <CharacterCard
           key={character.id}
-          {...character} // eslint-disable-line
+          character={character}
           onClick={() => handleCardClick(character.id)}
         />
       ))}
