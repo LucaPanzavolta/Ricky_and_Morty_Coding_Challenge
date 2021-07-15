@@ -44,7 +44,11 @@ CharacterCard.propTypes = {
     }).isRequired,
   }).isRequired,
   onClick: PropTypes.func.isRequired,
-  classes: PropTypes.string.isRequired,
+  classes: PropTypes.string,
+};
+
+CharacterCard.defaultProps = {
+  classes: '',
 };
 
 export default CharacterCard;

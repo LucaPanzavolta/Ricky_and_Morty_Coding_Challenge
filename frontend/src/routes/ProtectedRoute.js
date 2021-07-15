@@ -18,7 +18,7 @@ function ProtectedRoute({
 }
 
 ProtectedRoute.propTypes = {
-  component: PropTypes.element.isRequired,
+  component: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   redirectTo: PropTypes.string.isRequired,
 };

@@ -8,7 +8,7 @@ import CharacterDetail from '../views/CharacterDetail/CharacterDetail';
 import ProtectedRoute from './ProtectedRoute';
 
 function Routes() {
-  const isAuthenticated = useSelector((state) => state.authenticatedUser.data);
+  const isAuthenticated = useSelector((state) => !!state.authenticatedUser.data);
 
   return (
     <Switch>
