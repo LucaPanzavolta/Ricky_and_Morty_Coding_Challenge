@@ -23,6 +23,11 @@
 * Redux
 * React Router 
 * SCSS
+### Areas of Improvement for the codebase
+* Responsive Design
+* Better UX for Authentication flow
+* Redux Saga for async operations
+* Testing
 ### Troubleshooting
 * If you are using a local MongoDB instance please make sure to start the MongoDB daemon first.
 ``` mongod ```
