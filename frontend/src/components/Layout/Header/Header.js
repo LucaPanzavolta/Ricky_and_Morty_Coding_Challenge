@@ -14,7 +14,7 @@ function Header({ isAuthenticated }) {
     <header className="layout__header">
       {/* eslint-disable-next-line */}
       <span role="button" className="logo" onClick={() => history.push('/')}>
-        <img className="logo__icon" alt="logo" src="./rick_logo.png" />
+        <img className="logo__icon" alt="logo" src="/rick_logo.png" />
         Ricky&Morty
       </span>
 

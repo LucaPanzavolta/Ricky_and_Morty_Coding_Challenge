@@ -6,6 +6,7 @@ import SignIn from '../views/SignIn/SignIn';
 import CharactersList from '../views/CharactersList/CharactersList';
 import CharacterDetail from '../views/CharacterDetail/CharacterDetail';
 import ProtectedRoute from './ProtectedRoute';
+import NotFound from '../components/NotFound/NotFound';
 
 function Routes({ isAuthenticated }) {
   return (
@@ -15,6 +16,8 @@ function Routes({ isAuthenticated }) {
 
       <ProtectedRoute isAuthenticated={isAuthenticated} path="/" exact component={CharactersList} redirectTo="/signin" />
       <ProtectedRoute isAuthenticated={isAuthenticated} path="/:characterId" exact component={CharacterDetail} redirectTo="/signin" />
+
+      <Route component={NotFound} />
     </Switch>
   );
 }
