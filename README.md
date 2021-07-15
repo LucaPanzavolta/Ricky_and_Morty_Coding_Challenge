@@ -9,6 +9,10 @@
 ``` npm run start:backend ```
 4. Start the frontend app
 ``` npm run start:frontend ```
+### How to login into the app
+1. Please visit the /signup route first and register
+2. After successfull signup the app will automatically route you to /signin. Please login.
+3. You are logged in and and you can now use all the resources that require authentication.
 ### Backend Tech-Stack
 * Node.js
 * Express
