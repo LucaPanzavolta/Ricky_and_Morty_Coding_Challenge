@@ -3,6 +3,8 @@
 .layout {
 
   &__header {
+    display: flex;
+    align-items: center;
     background-color: $header-bg;
     font-size: 2rem;
     padding: 1em;
@@ -20,6 +22,16 @@
       &__icon {
         height: 4rem;
         margin-right: 0.5em;
+      }
+    }
+
+    .logout {
+      font-size: 1.2rem;
+      margin-left: auto;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
